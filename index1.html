@@ -1,0 +1,139 @@
+<!-- v13  se incluye una  reticula : drawReticula -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>emergencia</title>
+    <script src="js/variables.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/drawgridA.js"></script>
+    <script src="js/drawgridB.js"></script>
+    <script src="js/fillrect.js"></script>
+    <script src="js/getposition.js"></script>
+    <script src="js/patterns.js"></script>
+    <script src="js/initGrids.js"></script>
+    <script src="js/checkRulesAndDraw.js"></script>
+    <script src="js/decodeRle.js"></script>
+    <script src="js/coloringBeginAndReticula.js"></script>
+
+</head>
+<body onload="patterns('QueenBeeTurningOscillator')">
+<!-- <body > -->
+<button  onclick='clearTimeout(bucle)'>Pause</button>
+<button  onclick='setTimeout(drawPixels1,interval)'>Resume</button>
+
+<!-- <button value="block" id="block" onclick="readPattern(block)">Block</button> -->
+<!-- <button value="" id="" onclick=drawReticula()>drawGrid</button> -->
+<button value="blank" id="blank" onclick=getPattern('blank')>blank</button>
+<button value="tagalong" id="tagalong" onclick=getPattern('tagalong')>tagalong </button>
+<button value="lightweightSpaceship" id="lightweightSpaceship" onclick=getPattern('lightweightSpaceship')>lightweightSpaceship </button>
+<button value="pufferTrain" id="pufferTrain" onclick=getPattern('pufferTrain')>pufferTrain </button>
+<button value="gosperGliderGun" id="gosperGliderGun" onclick=getPattern('gosperGliderGun')>gosperGliderGun </button>
+<button value="pentadecathlon" id="pentadecathlon" onclick=getPattern('pentadecathlon')>pentadecathlon </button>
+<button value="104P177" id="104P177" onclick=getPattern('104P177')>104P177 </button>
+<button value="pinwheel" id="pinwheel" onclick=getPattern('pinwheel')>pinwheel </button>
+<button value="pulsar_synth" id="pulsar_synth" onclick=getPattern('pulsar_synth')>pulsar_synth </button>
+<button value="R-pentomino" id="R-pentomino" onclick=getPattern('R-pentomino')>R-pentomino </button>
+<button value="B52-Bomber" id="B52-Bomber" onclick=getPattern('B52-Bomber')>B52-Bomber </button>
+<button value="QueenBeeTurningOscillator" id="QueenBeeTurningOscillator" onclick=getPattern('QueenBeeTurningOscillator')>QueenBeeTurningOscillator </button>
+<button value="172P9" id="172P9" onclick=getPattern('172P9')>172P9 </button>
+  <br><br>
+
+<canvas id="myCanvas"  style="border:1px solid #000000;">
+</canvas> 
+<script>
+
+
+var canvas = document.getElementById("myCanvas");
+canvas.width = canvasWidth*factorAumento;
+canvas.height = canvasHeight*factorAumento;
+var ctx = canvas.getContext("2d");
+
+// drawReticula();//quizas borrrar, es muy cutre y no tan util
+
+
+initGrids();
+
+
+
+//event listener para dibukar el canvas
+// canvas.addEventListener('mousemove', function(evt) {
+canvas.addEventListener('click', function(evt) {
+	var mousePos = getMousePos(canvas, evt);
+	message = 'Mouse position: ' + (Math.round((mousePos.x)/factorAumento)-1) + ',' + (Math.round((mousePos.y)/factorAumento)-1);
+  // gridX = (Math.round( (mousePos.x) / factorAumento )-1);
+	gridX = (Math.round( (mousePos.x) / factorAumento )-1);
+	gridY = (Math.round( (mousePos.y) / factorAumento )-1);
+	if (grid1[gridX][gridY] == 1){
+		grid1[gridX][gridY] = 0;  
+    console.log(" : " + grid1[gridX][gridY]);
+    deleteRect(gridX, gridY);
+    // drawReticula();
+  }else{
+    grid1[gridX][gridY] = 1;
+    // console.log("grid1[" + gridX+ "]["+ gridY + "] : " + grid1[gridX][gridY] +", grid2[" + i+ "]["+ gridY + "] : " + grid2[gridX][gridY] );
+    
+    
+		fillRect(gridX, gridY);
+	}
+	writeMessage(canvas, message);
+}, false);
+
+//
+ window.onkeyup = function(e) {
+  var key = e.keyCode ? e.keyCode : e.which;
+   //13 enter, 8 backspace, 37left
+   //$resultado = ($a>$b) ? "A es Mayor que B":"B es Mayor que A";
+  if (key == 81) {//"q" para escribir o solo moverse
+    if (write == false) {
+      write = true;
+      console.log("write : " + write);
+    }else{
+      write = false;
+      console.log("write : " + write);
+    }
+  }else if (key == 13) {//begin execution
+       // consoleGrid();
+       checkRules();
+       drawVeryFirstGrid();
+       drawPixels1();
+  }else if (key == 8) {
+       history.go(0);
+  }else if (key == 37) {//left arrow
+    gridX--;
+    coloringCells();
+    // if (grid1[gridX][gridY] == 1){
+    // grid1[gridX][gridY] = 0;  
+    // deleteRect(gridX, gridY);
+    // }else{
+    // grid1[gridX][gridY] = 1;
+    // fillRect(gridX, gridY);
+    // }
+    // writeMessage(canvas, message);
+  }else if (key == 39) {//right arrow
+    gridX++;
+    coloringCells();
+  }else if (key == 38) {//up arrow
+    gridY--;
+    coloringCells();
+  }else if (key == 40) {//down arrow
+    gridY++;
+    coloringCells();
+  }else if (key == 80) {//pause P
+    clearTimeout(bucle);
+  }else if (key == 82) {//resume R
+    setTimeout(drawPixels1,interval);
+  }
+   //lo de abajo no funciona
+   // else if (key == 8) {
+   // 	   window.clearTimeout(drawPixels1);
+   // }
+}
+
+</script>
+<!--  <button type="button" onclick="drawPixels1()" style="">next</button> 
+ <button type="button" onclick="history.go(0)" style="">refresh</button> 
+ --> <div></div>
+
+</body>
+</html>

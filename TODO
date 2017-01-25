@@ -1,0 +1,17 @@
+TODO
+
+me he quedado en q pude pasar el parametro por get y ajax para pasarlo al lector de rle.php. valorar si merece la pena poner php o si mejor poner las variables en un archivo js
+
+optimizar el codigo(de momento ya hice para q no se reimprima una celula ni se borre algo q ya está borrado)
+
+poder centrar el pattern en funcion de su tamaño o donde mas te apetezca 
+
+arreglar lo de la pausa buggy
+
+php para parsear los rls(quitar lo rosa)
+
+si una recta se curva , esta abarca una segunda dimensión.  si lo q se curva es un plano, este abarcaría tres dimensiones. pero y si lo q se curva es un espacio en tres dimensiones? sobre que cuarta dimensión se curvaría? lo haría a través del tiempo?
+
+asegurarme q el paused global comienza en false; si no da problemas
+
+en conway las particulas no pueden moverse más rápido de la velocidad de la luz
