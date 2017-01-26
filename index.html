@@ -16,13 +16,17 @@
     <script src="js/decodeRle.js"></script>
     <script src="js/coloringBeginAndReticula.js"></script>
     <script src="js/ajax/ajax.js"></script>
+    <script src="js/openfile.js"></script>
+    <script src="js/changeVariables.js"></script>
+    <script src="js/pause-resume.js"></script>
 
 </head>
+<body >
 <!-- <body onload="pattern('QueenBeeTurningOscillator')"> -->
-<!-- <body onload="init()"> Este es el correcto, los demas son para debug-->
+ <body onload="init()"> <!-- Este es el correcto, los demas son para debug -->
 <!-- // <body onload="ajax('blinker')"> -->
-<body onload="ajax('blinker')">
-<!-- <body > -->
+<!-- <body onload="ajax('blinker')"> -->
+<input type='file' id="fileId">
 <button  onclick='clearTimeout(bucle)'>Pause</button>
 <button  onclick='setTimeout(drawPixels1,interval)'>Resume</button>
 <!-- <button value="" id="" onclick=drawReticula()>drawGrid</button> -->

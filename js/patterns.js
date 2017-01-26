@@ -59,7 +59,8 @@ function pattern(argument) {
   	//pattern = "o$o$o!"
   	//pufferTrain
   	// pattern = "b3o11b3o$o2bo10bo2bo$3bo4b3o6bo$3bo4bo2bo5bo$2bo4bo8bo!";
-  	//pattern = "o$o$o!";
+    //pattern = "o$o$o!";
+  	// pattern = "oo$oo!";
   drawPattern(pattern);
 }
 function drawPattern(pattern) {

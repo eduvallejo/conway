@@ -3,8 +3,11 @@
 //checking neighbourhood
 function checkRules(argument) {
 	//check neighbourhood rules
+	// console.log("interval : " + interval);
+	
 	//limites izquierda a derecha
 	for (var j = 1; j < canvasHeight; j++) {
+
 		// for (var i = 1; i < 2; i++) {
 		var i = 1;
 	    neighboursAlive = 0;
@@ -139,10 +142,17 @@ function checkRules(argument) {
 	    // }
 	  };  
 	};
+	for (var i = 0; i < canvasWidth; i++) {
+		for (var j = 0; j < canvasHeight; j++) {
+			// temporalGrid[i][j] = grid1[i][j];
+			// console.log("grid1 : [" + i + "][" + j + "]= " + grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);
+		};
+	}
 }
 
 //draw grid optimizada para imprimir solo cuando pase de 0 a 1 o borrar solo de 1 a 0
 function drawGrid(argument) {
+		
 	for (var i = 1; i < canvasWidth ; i++) {
 		for (var j = 1; j < canvasWidth ; j++) {
 			// console.log("BUCLE2");

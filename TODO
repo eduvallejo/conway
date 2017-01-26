@@ -6,7 +6,7 @@ optimizar el codigo(de momento ya hice para q no se reimprima una celula ni se b
 
 poder centrar el pattern en funcion de su tamaño o donde mas te apetezca 
 
-arreglar lo de la pausa buggy
+arreglar lo de resize para q no altere el juego en marcha
 
 php para parsear los rls(quitar lo rosa)
 

@@ -9,6 +9,12 @@ function init(argument) {
 	console.log("zoom : " + zoom);	
 	console.log("paused : " + paused);	
 
+	//para cuando se abra nuevo archivo 
+	document.getElementById('fileId').onchange = function () {
+	  // alert('Selected file: ' + this.value);
+	  ajax(this.value);
+	};
+
 	initGrids();//darle valor cero a las grids cuando ya sabemos el width
 	pattern();
 
@@ -58,16 +64,18 @@ function init(argument) {
 	  //      checkRules();
 	  //      drawPixels1();
 	  }else if (key == 80 && pattern != "" ) {//Enter or pause P
-	    if (paused == true){
-	      setTimeout(drawPixels1,interval);
-	      paused = false;
-	      console.log("paused : " + paused);
-	    }else if (paused == false) {
-	      clearTimeout(bucle);
-	      paused = true;
-	      console.log("paused : " + paused);
+	   	if (paused == false) {
+	      // clearTimeout(bucle);
+	      // paused = true;
+	      // console.log("paused : " + paused);
+	      pause();
+	    }else if (paused == true){
+	      // setTimeout(drawPixels1,interval);
+	      // paused = false;
+	      // console.log("paused : " + paused);
+	      resume();
 	    }
-	  }else if (key == 88) {//reiniciar (tecla x))
+	  }else if (key == 83) {//reiniciar (tecla s))
 	    clearTimeout(bucle);
 	    emptyGrids();
 	    drawVeryFirstGrid();
@@ -89,7 +97,7 @@ function init(argument) {
 	  }else if (key == 40) {//down arrow
 	    gridY++;
 	    coloringCells();
-	  }else if (key == 8) {//refresh backspac
+	  }else if (key == 82) {//refresh r
 	    history.go(0);
 		}
 	}
@@ -111,29 +119,33 @@ function initGrids(argument) {
 			grid2[i][j] = 0;
 		};
 	}
+}
 
-	//para hacer el toro intento darle valores diferenciaddos a los [0], 
-	//antes simplmente eran 0. de esta manera sabre si estan arriba aabajo etc..
-	for (var i = 0; i < canvasWidth; i++) {
-		grid1[i][0] = "norte"; // norte 12
-		grid1[0][i] = "sur";  //oeste 9
-		grid1[canvasHeight-1][i] = "este";// 3 este
-		grid1[i][canvasHeight-1] = "sur"; // 6sur
-
-		grid2[i][0] = "norte"; // norte 12
-		grid2[0][i] = "sur";  //oeste 9
-		grid2[canvasHeight-1][i] = "este";// 3 este
-		grid2[i][canvasHeight-1] = "sur"; // 6sur
+//grid temporal para hacer resize en marcha
+function temporalGrid(newWidth, newHeight) {
+	console.log("newWidth : " + newWidth);
+	
+	//iniciamos la grid TEmporal	
+	for (var i = 0; i < newWidth; i++) {
+		temporalGrid[i]=[];
+		for (var j = 0; j < newHeight; j++) {
+			temporalGrid[i][j] = 0;
+		};
 	}
-
-	//show grid values
-	// for (var i = 0; i < canvasWidth; i++) {
-	// 	for (var j = 0; j < canvasHeight; j++) {
-	// 		 console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
+	//copiamos la grid 1 en la temporal(aunq sobre espacios)
+	for (var i = 0; i < canvasWidth; i++) {
+		for (var j = 0; j < canvasHeight; j++) {
+			temporalGrid[i][j] = grid1[i][j];
+			// console.log("grid1 : [" + i + "][" + j + "]= " + grid1[i][j] + ", temporalGrid : [" + i + "][" + j + "]= "+ temporalGrid[i][j]);				
+		};
+	}
+	// //show grid temporal debug	
+	// for (var i = 0; i < newWidth; i++) {
+	// 	for (var j = 0; j < newHeight; j++) {
+	// 		console.log("gridTemporal : [" + i + "][" + j + "]= " + temporalGrid[i][j]);				
+	// 		// console.log("newWidth : " + newWidth);
 	// 	};
 	// }
-
-
 }
 
 //emptyGrids , despuesde hacerla creo ver q es la misma q initgrids
@@ -151,21 +163,21 @@ function emptyGrids(argument) {
 	}
 }
 
-function changeInterval(argument) {
-	clearTimeout(bucle);
+// function changeInterval(argument) {
+// 	clearTimeout(bucle);
    
-	interval = document.getElementById("interval").value;
-	console.log("interval : " + interval);	
+// 	interval = document.getElementById("interval").value;
+// 	console.log("interval : " + interval);	
 	
-	setTimeout(drawPixels1,interval);
-	console.log("paused : " + paused);
-}
+// 	setTimeout(drawPixels1,interval);
+// 	console.log("paused : " + paused);
+// }
 
-function changeHeight(argument) {
-	canvasHeight = document.getElementById("height").value*zoom;
-	canvasWidth = document.getElementById("height").value*zoom;
-	canvas.width = canvasWidth*zoom;
-	canvas.height = canvasHeight*zoom;
-	console.log("canvasHeight : " + canvasHeight);	
-	console.log("canvasWidth : " + canvasWidth);	
-}
+// function changeHeight(argument) {
+// 	canvasHeight = document.getElementById("height").value*zoom;
+// 	canvasWidth = document.getElementById("height").value*zoom;
+// 	canvas.width = canvasWidth*zoom;
+// 	canvas.height = canvasHeight*zoom;
+// 	console.log("canvasHeight : " + canvasHeight);	
+// 	console.log("canvasWidth : " + canvasWidth);	
+// }

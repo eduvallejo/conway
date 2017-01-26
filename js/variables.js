@@ -3,15 +3,17 @@ var ctx;
 
 var grid1 = [];
 var grid2 = [];
+var temporalGrid = [];//para lo del resize en marcha
 
 var count = 0;
-var interval = 50;
+var interval = 100;
+// console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
-var canvasHeight = 15;
+var canvasHeight = 19;
 //zoom = zoom
 var zoom = 3;
-var origenPatternsImportadosX = 3;
-var origenPatternsImportadosY = 3;
+var origenPatternsImportadosX = 7;
+var origenPatternsImportadosY = 7;
 var canvasWidth = canvasHeight;
 
 var neighboursAlive;
