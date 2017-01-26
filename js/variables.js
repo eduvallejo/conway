@@ -12,8 +12,8 @@ var interval = 100;
 var canvasHeight = 19;
 //zoom = zoom
 var zoom = 3;
-var origenPatternsImportadosX = 7;
-var origenPatternsImportadosY = 7;
+var origenPatternsImportadosX = 3;
+var origenPatternsImportadosY = 3;
 var canvasWidth = canvasHeight;
 
 var neighboursAlive;
@@ -33,5 +33,6 @@ var block1 = "";//la variable pattern en el indice
 var pattern;
 // var origenPatternsImportados = canvasHeight/4;
 
-var paused = false;
+// var paused = false;
+var paused = true;
 

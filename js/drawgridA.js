@@ -1,8 +1,5 @@
-/*intentado simplificar las rules para hacer menos comparaciones*/
-
-
+//bucle de ejcución
 function drawPixels1() {
-
 	checkRules();
 
 	drawGrid();

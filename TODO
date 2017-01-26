@@ -12,6 +12,9 @@ php para parsear los rls(quitar lo rosa)
 
 si una recta se curva , esta abarca una segunda dimensión.  si lo q se curva es un plano, este abarcaría tres dimensiones. pero y si lo q se curva es un espacio en tres dimensiones? sobre que cuarta dimensión se curvaría? lo haría a través del tiempo?
 
-asegurarme q el paused global comienza en false; si no da problemas
+asegurarme q el paused global comienza en false; si no da problemas.
+arreglar lo de tener q darle dos veces al stop para q se pare
 
 en conway las particulas no pueden moverse más rápido de la velocidad de la luz
+
+mirar q pasa con la intruduccion manual de patterns
