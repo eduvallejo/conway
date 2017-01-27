@@ -1,7 +1,8 @@
 <?php 
 // $_GET['patternName'];
 // $file = fopen("sampleTuring","r");
-$file = fopen("turing.rle","r");
+// $file = fopen("turing.rle","r");
+$file = fopen("sidecargun.rle","r");
 
 // while( fscanf($file, "%s", $word) != EOF)
 while(!feof($file))

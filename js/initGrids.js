@@ -13,10 +13,13 @@ function init(argument) {
 	document.getElementById('fileId').onchange = function () {
 	  // alert('Selected file: ' + this.value);
 	  ajax(this.value);
+	  // console.log("pattern : " + test);
 	};
 
 	initGrids();//darle valor cero a las grids cuando ya sabemos el width
-	pattern();
+
+	//pattern() coloca el pattern sobre el tablero
+	// pattern();
 
 	//poner la altura en el input de la altura
 	document.getElementById("height").value = canvasHeight;

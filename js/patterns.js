@@ -50,19 +50,11 @@ function pattern(argument) {
   //pattern = "21bo3b$18b4o3b$13bo2bob2o5b$13bo11b$4o8bo3bob2o5b$o3bo5b2ob2obobob5o$o9b2obobobo2b5o$bo2bo2b2o2bo3b3o2bob2ob$6bo2bob2o12b$6bo4b2o12b$6bo2bob2o12b$bo2bo2b2o2bo3b3o2bob2ob$o9b2obobobo2b5o$o3bo5b2ob2obobob5o$4o8bo3bob2o5b$13bo11b$13bo2bob2o5b$18b4o3b$21bo!";
 //lighjtweight
   // pattern = "bo2bo$o$o3bo$4o!";
-  // pattern = "oo$ooob!" //muere en 3gen
-  // pattern = "bo2bo$o$o3bo$4o!";
-   //pattern = "o$o$o!" //m
-	//glider
-	pattern = "o$obo$oo!";
- 	// pattern = "ooo!";
-  	//pattern = "o$o$o!"
-  	//pufferTrain
-  	// pattern = "b3o11b3o$o2bo10bo2bo$3bo4b3o6bo$3bo4bo2bo5bo$2bo4bo8bo!";
-    //pattern = "o$o$o!";
-  	// pattern = "oo$oo!";
+  console.log("pattern : " + pattern);
+  
   drawPattern(pattern);
 }
+
 function drawPattern(pattern) {
   console.log("drawPattern : " + pattern);
   decodeRle(pattern);

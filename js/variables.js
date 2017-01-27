@@ -9,7 +9,7 @@ var count = 0;
 var interval = 100;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
-var canvasHeight = 19;
+var canvasHeight = 300;
 //zoom = zoom
 var zoom = 3;
 var origenPatternsImportadosX = 3;
