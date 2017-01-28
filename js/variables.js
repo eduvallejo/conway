@@ -6,14 +6,14 @@ var grid2 = [];
 var temporalGrid = [];//para lo del resize en marcha
 
 var count = 0;
-var interval = 100;
+var interval = 30;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
-var canvasHeight = 300;
+var canvasHeight = 500;
 //zoom = zoom
-var zoom = 3;
-var origenPatternsImportadosX = 3;
-var origenPatternsImportadosY = 3;
+var zoom = 2;
+var origenPatternsImportadosX = canvasHeight/10;
+var origenPatternsImportadosY = canvasHeight/10;
 var canvasWidth = canvasHeight;
 
 var neighboursAlive;
