@@ -94,7 +94,7 @@ function init(argument) {
 	      // console.log("paused : " + paused);
 	      resume();
 	    }
-	  }else if (key == 83) {//reiniciar (tecla s))
+	  }else if (key == 69) {//reiniciar (tecla s))
 	    clearTimeout(bucle);
 	    emptyGrids();
 	    drawVeryFirstGrid();

@@ -1,42 +1,21 @@
 <?php 
-
 $targetName = $_GET["name"];
-// echo "TARGET: " . $targetName ."<br>";
+$path = realpath('/var/www/conway/structures/');
 
-$path = (loopDirs("../../structures"));
-//loop dirs
-function loopDirs($dir){
-	$targetName = $_GET["name"];
-	foreach(glob(dirname(__FILE__) . "/" . $dir . "/*") as $filename){
-	   	// echo "base: " . basename($filename) ."<br>";
-	   	if(!is_dir($filename)){
-	   		if (basename($filename) == $targetName) {//caber2.lif
-	   			// echo "<br> FOUND BARBER!!!!<option value='" . $filename . "'>".$filename."</option>";
-	   			// echo "<br>eo" . strpos($filename, basename($filename));
-	   			// echo "Found in: " . $dir . "<br>";
-	   			$filename = substr($filename, strpos($filename, basename($filename)));
-				// echo "newString: " . $filename . "<br>"; 
-				$pathFound = $dir . "/" . $filename . "<br>"; 
-				// echo "FOUND : " . basename($filename) ."<br>";
-				return $pathFound;
-	   		}else{
-	   			// echo "not target : " . $filename ."<br>" ;
-	   		}
-	   	}else if(is_dir($filename)) {
-	   		// echo 'is_dir: ';
-	   		// echo "is_dir: " . $filename ."<br>" ;
-	   		$newDir = $dir . "/" . basename($filename) ;
-	   		// echo "newDir del loop: " . $newDir . "<br>";
-			$pathFound= loopDirs($newDir);
-	   	}
-	}
-	return $pathFound;
+$objects = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST);
+foreach($objects as $name => $object){
+    if (basename($name) == $targetName) {
+    	// echo("\$name : " . $name . "<br>");
+    	
+    	$result = str_replace("/var/www/conway/structures/", "../../structures/", $name);
+    	// echo $result;
+    }
 }
 
-/////
-// echo "PATH: " . $path;
-// echo "correct path: ../../structures/" . $_GET["name"] . "<br>";
-$file = fopen("../../structures/" . $targetName,"r");
+$file = fopen($result , "r");
+if (!$file) {
+	echo 'Could not open: ' . $result;
+}
 $pattern = [];//haremos un array con 3, el 0 sera x , el 1 la y y el 3 el rle
 for ($i=0; $i < 3; $i++) { 
 	$pattern[$i] = "";
@@ -90,7 +69,7 @@ echo json_encode($pattern);
 // echo $pattern[0];	
 // echo $pattern[1];	
 // echo $pattern[2];	
-
+fclose($file);
 
 
 

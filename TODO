@@ -1,8 +1,5 @@
 TODO
 
-HE conseguido parsear la x y la y , y pasarlas junto al rle mediante ajax pero parece q falla en los patterns grandes(el ajax solo recibe la ultima linea a pesar de q el php funciona bien: Bug01). solucion: parece haber saltos de linea  en los rle..modifico el echo.php para concatenar las lineas 
-
-me he quedado en q pude pasar el parametro por get y ajax para pasarlo al lector de rle.php. valorar si merece la pena poner php o si mejor poner las variables en un archivo js.
 hacer q aparezcan los nombres de los archivos rle en el index a modo de options
 
 optimizar el codigo(de momento ya hice para q no se reimprima una celula ni se borre algo q ya está borrado)
