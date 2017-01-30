@@ -9,11 +9,11 @@ var count = 0;
 var interval = 30;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
-var canvasHeight = 500;
+var canvasHeight = 100;
 //zoom = zoom
-var zoom = 2;
-var origenPatternsImportadosX = canvasHeight/10;
-var origenPatternsImportadosY = canvasHeight/10;
+var zoom = 3;
+var origenPatternsImportadosX = 20;
+var origenPatternsImportadosY = 20;
 var canvasWidth = canvasHeight;
 
 var neighboursAlive;

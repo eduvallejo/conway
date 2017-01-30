@@ -9,6 +9,10 @@ function init(argument) {
 	console.log("zoom : " + zoom);	
 	console.log("paused : " + paused);	
 
+	//debugging file uopload
+	// document.getElementById("fileId").click();
+
+
 	//para cuando se abra nuevo archivo 
 	document.getElementById('fileId').onchange = function () {
 	  // alert('Selected file: ' + this.value);
@@ -77,7 +81,8 @@ function init(argument) {
 	  //      drawVeryFirstGrid();
 	  //      checkRules();
 	  //      drawPixels1();
-	  }else if (key == 80 && pattern != "" ) {//Enter or pause P
+	  // }else if (key == 80 && pattern != "" ) {//Enter or pause P
+	  }else if (key == 80 ) {//Enter or pause P
 	   	if (paused == false) {
 	      // clearTimeout(bucle);
 	      // paused = true;

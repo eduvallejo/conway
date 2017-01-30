@@ -1,7 +1,7 @@
 function pause(argument) {
 	clearTimeout(bucle);
 	paused = true;
-	// console.log("paused : " + paused);
+	console.log("paused : " + paused);
 }
 	      
 function resume(argument) {
@@ -9,7 +9,7 @@ function resume(argument) {
   	drawVeryFirstGrid();
 	setTimeout(drawPixels1,interval); //drawPixels=check and draw
 	paused = false;
-	// console.log("paused : " + paused);
+	console.log("paused : " + paused);
 }
 
 //run after manual insert

@@ -1,6 +1,5 @@
 //decode rle pattern and give values to grid1
 function decodeRle(pattern) {
-	// console.log("pattern : " + pattern);
 	var pointer = 0; 
 	var row = [];
 	var isaNumber = false;
@@ -10,6 +9,7 @@ function decodeRle(pattern) {
 	var run_count = 1;
 
 	while(pattern[pointer] != '!'){
+	// console.log("pattern[" + pointer + "] : " + pattern[pointer]);
 	if (isNaN(pattern[pointer]) && (pattern[pointer] != '$')) { //letters
 	 	for (var i = 0; i < run_count; i++) {
 	      // run_count[i];

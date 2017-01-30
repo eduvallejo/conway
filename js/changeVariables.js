@@ -14,8 +14,8 @@ function changeHeight(argument) {
 	var newWidth = document.getElementById("height").value;
 	var newHeight = document.getElementById("height").value;
 	console.log("newWidth : " + newWidth);
-	//solo se aplica para hacer más grande el tablero
-	if (newHeight > canvasHeight) {
+	// //solo se aplica para hacer más grande el tablero
+	// if (newHeight > canvasHeight) {
 		//primero pausamos antes de cambiar la dimension del tablero
 		if (paused == false) {pause();}
 		
@@ -42,7 +42,7 @@ function changeHeight(argument) {
 		document.getElementById("height").value = canvasHeight;
 	}
 
-}
+// }
 
 // function changeHeight(argument) {
 // 	//primero pausamos antes de cambiar la dimension del tablero
