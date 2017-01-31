@@ -1,5 +1,7 @@
 //ajax.js
 function ajax(fileName) {
+	console.log("AJAXfileName : " + fileName);
+	
 	var url = "js/ajax/echo.php?name=" + fileName;
 
 	//ajax

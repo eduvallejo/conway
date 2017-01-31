@@ -1,6 +1,10 @@
 TODO
 
-hacer q aparezcan los nombres de los archivos rle en el index a modo de options
+parece q se cuelga el decode.rle despues de hacer lo de las options
+
+hacer q aparezcan los nombres de los archivos rle en el index a modo de options, 
+
+el listener del click se duplica cada vez q cargamos un pattern(solo funciona cuando hemos caragado 0, 2, 4, 6... patterns). Pero solo cuando cargamos patterns grandes, q son los q vuelven a cargar el init()
 
 optimizar el codigo(de momento ya hice para q no se reimprima una celula ni se borre algo q ya está borrado)
 

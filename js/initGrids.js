@@ -11,6 +11,7 @@ function init(argument) {
 
 	//debugging file uopload
 	// document.getElementById("fileId").click();
+	document.getElementById("populateSelect").click();
 
 
 	//para cuando se abra nuevo archivo 
@@ -30,12 +31,12 @@ function init(argument) {
 	//poner el intervalo en el input del intervalo
 	document.getElementById("interval").value = interval;
 
-	//event listener para dibukar el canvas a base de clicks
-	// canvas.addEventListener('mousemove', function(evt) {
+	// //event listener para dibukar el canvas a base de clicks
+	// // canvas.addEventListener('mousemove', function(evt) {
 	canvas.addEventListener('click', function(evt) {
 		console.log("click event");
-		
-		var mousePos = getMousePos(canvas, evt);
+			
+		mousePos = getMousePos(canvas, evt);
 		console.log('Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1));
 		message = 'Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1);
 	  // gridX = (Math.round( (mousePos.x) / zoom )-1);

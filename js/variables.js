@@ -5,11 +5,12 @@ var grid1 = [];
 var grid2 = [];
 var temporalGrid = [];//para lo del resize en marcha
 
+var mousePos;
 var count = 0;
 var interval = 30;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
-var canvasHeight = 100;
+var canvasHeight = 200;
 //zoom = zoom
 var zoom = 3;
 var origenPatternsImportadosX = 20;

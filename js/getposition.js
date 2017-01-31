@@ -11,18 +11,39 @@ function writeMessage(canvas, message) {
 
 }
 function getMousePos(canvas, evt) {
+	console.log("getMousePos()");
 	var rect = canvas.getBoundingClientRect();
 	return {
 	  x: evt.clientX - rect.left,
 	  y: evt.clientY - rect.top
 	};
 }
-// var canvas = document.getElementById('myCanvas');
-// var ctx = canvas.getContext('2d');
 
-// canvas.addEventListener('mousemove', function(evt) {
-// 	var mousePos = getMousePos(canvas, evt);
-// 	var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+// function clickCanvas(evt) {
+// 	console.log("click event");
+		
+// 	// mousePos = getMousePos(canvas, evt);
+// 	getMousePos(canvas, evt);
+// 	console.log('Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1));
+// 	message = 'Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1);
+//   // gridX = (Math.round( (mousePos.x) / zoom )-1);
+// 	gridX = (Math.round( (mousePos.x) / zoom )-1);
+// 	gridY = (Math.round( (mousePos.y) / zoom )-1);
+	
+// 	if (grid1[gridX][gridY] == 1){
+// 		console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+// 		grid1[gridX][gridY] = 0;  
+// 		console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+// 		console.log("gridX : " + gridX);
+// 		console.log("gridY : " + gridY);
+// 		deleteRect(gridX, gridY);
+// 		// drawReticula();
+// 		writeMessage(canvas, message);
+// 	}else{ //else if (grid1[gridX][gridY] == 0)
+// 		console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+// 		grid1[gridX][gridY] = 1;
+// 		console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+// 		fillRect(gridX, gridY);
+// 	}
 // 	writeMessage(canvas, message);
-// }, false);
-
+// }
