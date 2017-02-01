@@ -15,11 +15,11 @@ function init(argument) {
 
 
 	//para cuando se abra nuevo archivo 
-	document.getElementById('fileId').onchange = function () {
-	  // alert('Selected file: ' + this.value);
-	  ajax(this.value);
-	  // console.log("pattern : " + test);
-	};
+	// document.getElementById('fileId').onchange = function () {
+	//   // alert('Selected file: ' + this.value);
+	//   ajax(this.value);
+	//   // console.log("pattern : " + test);
+	// };
 
 	initGrids();//darle valor cero a las grids cuando ya sabemos el width
 

@@ -1,8 +1,8 @@
 TODO
 
-parece q se cuelga el decode.rle despues de hacer lo de las options
+quitar el boton q pone Select y q solo está para q se autoclicke y q se carguen las options al cargar el index.html
 
-hacer q aparezcan los nombres de los archivos rle en el index a modo de options, 
+quitar el foco del select para poder usar los atajos sin q se cargue otra opcion
 
 el listener del click se duplica cada vez q cargamos un pattern(solo funciona cuando hemos caragado 0, 2, 4, 6... patterns). Pero solo cuando cargamos patterns grandes, q son los q vuelven a cargar el init()
 
