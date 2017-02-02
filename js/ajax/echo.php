@@ -1,5 +1,7 @@
 <?php 
 $targetName = $_GET["name"];
+
+// $path = realpath('/srv/disk11/1909506/www/eduardovallejo.atwebpages.com/structures/');
 $path = realpath('/var/www/conway/structures/');
 
 $objects = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST);

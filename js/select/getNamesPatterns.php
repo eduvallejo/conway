@@ -1,6 +1,7 @@
 <?php 
 // $targetName = $_GET["name"];
 
+// $path = realpath('/srv/disk11/1909506/www/eduardovallejo.atwebpages.com/structures/');
 $path = realpath('/var/www/conway/structures/');
 $nameArray = array();
 $objects = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST);
@@ -17,5 +18,9 @@ foreach($objects as $name => $object){
 		}    
 	}
 }
+//eliminamos patterns duplicados
+$nameArray = array_unique($nameArray);
+//ordenar alfabeticamente el array
+sort($nameArray);
 echo json_encode($nameArray);
 ?>
