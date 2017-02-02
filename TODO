@@ -1,4 +1,6 @@
 TODO
+arreglar lo de los var-378+588... resulta q el problema es el (+) ya q en las querys es necesario codificarlas como %2B. para ello , en el ajax.js hago 
+	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
 
 quitar el boton q pone Select y q solo está para q se autoclicke y q se carguen las options al cargar el index.html
 
