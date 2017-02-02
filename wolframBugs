@@ -1,0 +1,1 @@
+bug02 se duplica el click event cada vez q , al cargar un pattern grande volvemos a hacer init() en el ajax.js
