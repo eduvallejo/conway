@@ -1,4 +1,5 @@
 TODO
 de momento creo q el canvas se crea igual, simplemente se irá rellenando una fila cada iteración
 If cell and right-hand neighbor are both 0 then new state of cell = state of left-hand neighbor; otherwise new state is complement of that of left-hand neighbor.
+bla bla
 
