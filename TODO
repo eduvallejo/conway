@@ -1,11 +1,9 @@
 TODO
 CONWAY branch 
-arreglar lo de los var-378+588... resulta q el problema es el (+) ya q en las querys es necesario codificarlas como %2B. para ello , en el ajax.js hago 
-	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
-
-quitar el boton q pone Select y q solo está para q se autoclicke y q se carguen las options al cargar el index.html
 
 quitar el foco del select para poder usar los atajos sin q se cargue otra opcion
+
+quitar el blinker2 y el blinkerDebug, no se si estan en el remoto pero si en el localhost
 
 el listener del click se duplica cada vez q cargamos un pattern(solo funciona cuando hemos caragado 0, 2, 4, 6... patterns). Pero solo cuando cargamos patterns grandes, q son los q vuelven a cargar el init()
 
@@ -16,3 +14,5 @@ si una recta se curva , esta abarca una segunda dimensión.  si lo q se curva es
 
 en conway las particulas no pueden moverse más rápido de la velocidad de la luz
 
+arreglar lo de los var-378+588... resulta q el problema es el (+) ya q en las querys es necesario codificarlas como %2B. para ello , en el ajax.js hago 
+	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
