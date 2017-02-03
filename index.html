@@ -20,34 +20,40 @@
     <script src="js/changeVariables.js"></script>
     <script src="js/pause-resume.js"></script>
     <script src="js/select/populateSelect.js"></script>
+    <script src="js/start.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <!-- <body onload="pattern('QueenBeeTurningOscillator')"> -->
 <!-- <body onload="ajax('blinker')"> -->
 
 <!--<body onload="ajax('blinker')"> -->
-  <body onload="init()"> <!-- Este es el correcto, los demas son para debug -->
-<!-- <body> -->
-<!-- <input type='file' id="fileId"> -->
-<!--  -->
-<button  onclick='togglePause()'>Run/Pause(p)</button>
-<button  onclick='eraseBoard()'>Erase the board(e)</button>
-<br><br>
-<button id="populateSelect" onclick="populateSelect()">select pattern--></button>
-<select id="mySelect" onchange="drawOption()">
-    <option value="" ></option>
-    <!-- <option value="barbershop">barbershop</option> -->
-</select>
+<body onload="populateAjax(); init();"> <!-- Este es el correcto, los demas son para debug -->
+<!--  <button id="populateSelect" onclick="populateSelect()">select pattern</button>
+ -->
+<div id="primeraLinea">
+    <button id="populateSelect">select pattern--></button>
+    <select id="mySelect" onchange="drawOption()">
+        <option value="" ></option>
+        <!-- <option value="barbershop">barbershop</option> -->
+    </select>
+    <!-- <br><br> -->
+    <!-- <body> -->
+    <!-- <input type='file' id="fileId"> -->
+    <!--  -->
+    <button  onclick='togglePause()'>Run/Pause(p)</button>
+    <button  onclick='eraseBoard()'>Erase the board(e)</button>
+</div>
+<!-- <br><br> -->
+<div id="segundaLinea">
+    <!-- //changeInterval -->
+    <input type="text" name="interval" id="interval" style="width: 50px">
+    <button type="submit" value="interval" onclick=changeInterval()>interval</button>
+    <!-- change height -->
+    <input type="text" id="height" style="width: 50px">
+    <button type="submit"  onclick=changeHeight()>height</button>
+</div>
 
-<!-- //changeInterval -->
-<input type="text" name="interval" id="interval" style="width: 50px">
-<button type="submit" value="interval" onclick=changeInterval()>interval</button>
-<!-- change height -->
-<input type="text" id="height" style="width: 50px">
-<button type="submit"  onclick=changeHeight()>height</button>
-
-<br>
-
-
+<!-- <br> -->
 <canvas id="myCanvas"  style="border:1px solid #000000;">
 </canvas> 
 

@@ -11,7 +11,7 @@ function init(argument) {
 
 	//debugging file uopload
 	// document.getElementById("fileId").click();
-	document.getElementById("populateSelect").click();
+	// document.getElementById("populateSelect").click();
 
 
 	//para cuando se abra nuevo archivo 

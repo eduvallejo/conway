@@ -1,0 +1,10 @@
+#myCanvas{
+	display: block;
+	margin: auto;
+}
+
+#primeraLinea, #segundaLinea{
+	margin: 1% auto;
+	/*display: block;*/
+	text-align: center;	
+}

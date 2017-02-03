@@ -49,7 +49,7 @@ while(!feof($file)){
 
 echo json_encode($pattern);
 
-// fclose($file);
+fclose($file);
 
 
 
