@@ -5,9 +5,9 @@ function init(argument) {
 	canvas.width = canvasWidth*zoom;
 	canvas.height = canvasHeight*zoom;
 	ctx = canvas.getContext("2d");
-	console.log("width : " + canvasWidth);
-	console.log("zoom : " + zoom);	
-	console.log("paused : " + paused);	
+	// console.log("width : " + canvasWidth);
+	// console.log("zoom : " + zoom);	
+	// console.log("paused : " + paused);	
 
 	//debugging file uopload.
 	// document.getElementById("fileId").click();
@@ -22,15 +22,15 @@ function init(argument) {
 
 	initGrids();//darle valor cero a las grids cuando ya sabemos el width
 	
-	console.log("test");
-	console.log("grid["+ (canvasWidth/2) + "] : " + grid1[canvasWidth/2]);
+	// console.log("test");
+	// console.log("grid["+ (canvasWidth/2) + "] : " + grid1[canvasWidth/2]);
 	
 	 //la punta de la pirámide
 	//pattern() coloca el pattern sobre el tablero
 	// pattern();
 
 	//empezar en marcha(resume) o parado(comentado el resume)
-	// resume();
+	resume();
 	
 	//poner la altura en el input de la altura
 	document.getElementById("height").value = canvasHeight;
@@ -47,10 +47,10 @@ function init(argument) {
 	  if (key == 81) {//"q" para escribir o solo moverse
 	    if (write == false) {
 	      write = true;
-	      console.log("write : " + write);
+	      // console.log("write : " + write);
 	    }else{
 	      write = false;
-	      console.log("write : " + write);
+	      // console.log("write : " + write);
 	    }
 	  }else if (key == 80 ) {//Enter or pause P
 	   	if (paused == false) {
@@ -72,7 +72,7 @@ function init(argument) {
 	    numGenerations = 0;
 	    pattern = 0;
 	    paused = true;
-	    console.log("numGenerations : " + numGenerations);
+	    // console.log("numGenerations : " + numGenerations);
 	    document.title = "Generation: " + numGenerations;
 	  }else if (key == 37) {//left arrow
 	    gridX--;

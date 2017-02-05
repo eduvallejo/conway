@@ -5,8 +5,9 @@ function drawPixels1() {
 	drawGrid(jCoord);
 	//DEBUG
 	if ((jCoord - 2) == numMaxIterations ) {
-		console.log("paused?");
-		pause();}
+		// console.log("paused?");		
+		pause();
+	}
 };
 
 
