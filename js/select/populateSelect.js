@@ -1,14 +1,4 @@
-// function populateSelect(argument) {
-// 	// console.log("populateSelect");	
-// 	// var valueSelect = document.getElementById("mySelect").value;
-// 	// console.log("valueSelect: " + valueSelect);
-// 	var test = "test";
-// 	populateAjax(test);
-	
-// }
 
-//ajax.js
-//ajax.js
 function populateAjax(fileName) {
 	// var url = "js/ajax/echo.php?name=" + fileName;
 	// 

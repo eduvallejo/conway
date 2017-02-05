@@ -1,5 +1,9 @@
 TODO
-de momento creo q el canvas se crea igual, simplemente se irá rellenando una fila cada iteración
-If cell and right-hand neighbor are both 0 then new state of cell = state of left-hand neighbor; otherwise new state is complement of that of left-hand neighbor.
+http://mathworld.wolfram.com/Rule30.html
+los patrones se pueden reflejar en un numero de 8bits, 1=negro 0, blanco. la posición de los vecinos de cada bit refleja a su vez los numeros del 0 al 7en binario. la primera posicion de los vecinos, el de la derecha, son los tres blancos q equivaldria a 000=0, el ultimo, el de la izquierda seria el 111=7
+hacer un checkrules q tenga esto en cuenta para hacer los calculos
+rule 30
+If cell and right-hand neighbor are both 0 then new state of cell = state of left-hand neighbor; 
+otherwise new state is complement of that of left-hand neighbor.
 bla bla
 

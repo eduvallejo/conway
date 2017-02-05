@@ -1,7 +1,10 @@
 var canvas;
 var ctx;
+//para wolfram
+var jCoord = 1;
+var numMaxIterations = 15;
 
-var grid1 = [];
+var grid1 = [];//en wolfram las grids son array de una dimension
 var grid2 = [];
 var temporalGrid = [];//para lo del resize en marcha
 
@@ -10,12 +13,12 @@ var count = 0;
 var interval = 30;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
-var canvasHeight = 200;
+var canvasHeight = numMaxIterations;
 //zoom = zoom
-var zoom = 3;
-var origenPatternsImportadosX = 20;
-var origenPatternsImportadosY = 20;
-var canvasWidth = canvasHeight;
+var zoom = 2;
+var origenPatternsImportadosX = 1;
+var origenPatternsImportadosY = 1;
+var canvasWidth = canvasHeight*2;
 
 var neighboursAlive;
 var numGenerations = 0;

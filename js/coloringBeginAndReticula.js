@@ -16,13 +16,13 @@ function drawReticula(argument) {
  for (var i = 1; i <= canvasWidth-1; i++) {
   //verticales
   ctx.beginPath();
-  ctx.moveTo(i*factorAumento, factorAumento);
-  ctx.lineTo(i*factorAumento, canvasHeight*factorAumento-factorAumento);
+  ctx.moveTo(i*zoom, zoom);
+  ctx.lineTo(i*zoom, canvasHeight*zoom-zoom);
   ctx.stroke();
   //horozontales
   ctx.beginPath();
-  ctx.moveTo(factorAumento, i*factorAumento);
-  ctx.lineTo(canvasHeight*factorAumento-factorAumento, i*factorAumento);
+  ctx.moveTo(zoom, i*zoom);
+  ctx.lineTo(canvasHeight*zoom-zoom, i*zoom);
   ctx.stroke();
   console.log("reticula : " );
  }
@@ -38,7 +38,7 @@ function begin (argument) {
 				if (grid1[i][j] == 1){
 					// console.log("bucle2: " + i +","+ j);
 					// console.log(i);
-					//ctx.fillRect(i*factorAumento,j*factorAumento,factorAumento,factorAumento); // fill in the pixel(1x1) at (0,0)
+					//ctx.fillRect(i*zoom,j*zoom,zoom,zoom); // fill in the pixel(1x1) at (0,0)
 					fillRect(i,j);
 				}else{
 					grid1[i][j] = 0;

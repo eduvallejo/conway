@@ -13,10 +13,6 @@ function init(argument) {
 	// document.getElementById("fileId").click();
 	// document.getElementById("populateSelect").click();
 
-	//cargamos la lista de opciones
-	 // populateAjax();
-
-
 	//para cuando se abra nuevo archivo 
 	// document.getElementById('fileId').onchange = function () {
 	//   // alert('Selected file: ' + this.value);
@@ -25,44 +21,23 @@ function init(argument) {
 	// };
 
 	initGrids();//darle valor cero a las grids cuando ya sabemos el width
-
+	
+	console.log("test");
+	console.log("grid["+ (canvasWidth/2) + "] : " + grid1[canvasWidth/2]);
+	
+	 //la punta de la pirámide
 	//pattern() coloca el pattern sobre el tablero
 	// pattern();
 
+	//empezar en marcha(resume) o parado(comentado el resume)
+	// resume();
+	
 	//poner la altura en el input de la altura
 	document.getElementById("height").value = canvasHeight;
 	//poner el intervalo en el input del intervalo
 	document.getElementById("interval").value = interval;
 
-	// //event listener para dibukar el canvas a base de clicks
-	// // canvas.addEventListener('mousemove', function(evt) {
-	canvas.addEventListener('click', function(evt) {
-		console.log("click event");
-			
-		mousePos = getMousePos(canvas, evt);
-		console.log('Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1));
-		message = 'Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1);
-	  // gridX = (Math.round( (mousePos.x) / zoom )-1);
-		gridX = (Math.round( (mousePos.x) / zoom )-1);
-		gridY = (Math.round( (mousePos.y) / zoom )-1);
-		
-		if (grid1[gridX][gridY] == 1){
-			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
-			grid1[gridX][gridY] = 0;  
-			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
-			console.log("gridX : " + gridX);
-			console.log("gridY : " + gridY);
-			deleteRect(gridX, gridY);
-			// drawReticula();
-			writeMessage(canvas, message);
-		}else{ //else if (grid1[gridX][gridY] == 0)
-			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
-			grid1[gridX][gridY] = 1;
-			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
-			fillRect(gridX, gridY);
-		}
-		writeMessage(canvas, message);
-	}, false);
+	
 
 	//eventos asociados a teclas
 	 window.onkeyup = function(e) {
@@ -77,15 +52,6 @@ function init(argument) {
 	      write = false;
 	      console.log("write : " + write);
 	    }
-	  // }else if (key == 13 && pattern != "" && paused == true) {//begin execution (enter)unless blank grid
-	  //      // consoleGrid();
-	  //      paused = false;
-	  //      console.log("paused : " + paused);
-	       
-	  //      drawVeryFirstGrid();
-	  //      checkRules();
-	  //      drawPixels1();
-	  // }else if (key == 80 && pattern != "" ) {//Enter or pause P
 	  }else if (key == 80 ) {//Enter or pause P
 	   	if (paused == false) {
 	      // clearTimeout(bucle);
@@ -124,4 +90,34 @@ function init(argument) {
 	    history.go(0);
 		}
 	}
+
+	// //event listener para dibukar el canvas a base de clicks
+	// // canvas.addEventListener('mousemove', function(evt) {
+	canvas.addEventListener('click', function(evt) {
+		console.log("click event");
+			
+		mousePos = getMousePos(canvas, evt);
+		console.log('Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1));
+		message = 'Mouse position: ' + (Math.round((mousePos.x)/zoom)-1) + ',' + (Math.round((mousePos.y)/zoom)-1);
+	  // gridX = (Math.round( (mousePos.x) / zoom )-1);
+		gridX = (Math.round( (mousePos.x) / zoom )-1);
+		gridY = (Math.round( (mousePos.y) / zoom )-1);
+		
+		if (grid1[gridX][gridY] == 1){
+			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+			grid1[gridX][gridY] = 0;  
+			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+			console.log("gridX : " + gridX);
+			console.log("gridY : " + gridY);
+			deleteRect(gridX, gridY);
+			// drawReticula();
+			writeMessage(canvas, message);
+		}else{ //else if (grid1[gridX][gridY] == 0)
+			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+			grid1[gridX][gridY] = 1;
+			console.log("grid1[gridX][gridY] : " + grid1[gridX][gridY]);
+			fillRect(gridX, gridY);
+		}
+		writeMessage(canvas, message);
+	}, false);
 }

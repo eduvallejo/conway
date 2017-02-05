@@ -10,72 +10,69 @@ function changeInterval(argument) {
 }
 
 function changeHeight(argument) {
-	//iniciamos la gridTemporal
-	var newWidth = document.getElementById("height").value;
-	var newHeight = document.getElementById("height").value;
-	console.log("newWidth : " + newWidth);
 	// //solo se aplica para hacer más grande el tablero
-	if (newHeight > canvasHeight) {
-		//primero pausamos antes de cambiar la dimension del tablero
+		eraseBoard();
+		var newHeight = document.getElementById("height").value;
+		console.log("newHeight : " + newHeight);
+		changeWidth(newHeight);
+
 		if (paused == false) {pause();}
 		
-		temporalGrid(newWidth, newHeight);
-		
-		canvasHeight = document.getElementById("height").value;
-		canvasWidth = document.getElementById("height").value;
-		console.log("nuevo canvasWidth : " + canvasWidth);
-		
-		canvas.width = canvasWidth*zoom;
+		// canvasHeight = document.getElementById("height").value;
+		canvasHeight = newHeight;
 		canvas.height = canvasHeight*zoom;
-		//inicializamos de nuevo las grids 1 y 2
-		for (var i = 0; i < canvasWidth; i++) {
-			grid1[i]=[];grid2[i]=[];
-			for (var j = 0; j < canvasHeight; j++) {
-				grid1[i][j] = temporalGrid[i][j];
-				grid2[i][j] = 0;
-			};
-		}
-		//volvemos a ponerlo en marcha
-		drawVeryFirstGrid();
-		resume();
-	}else{
-		document.getElementById("height").value = canvasHeight;
-	}
-
+		numMaxIterations = newHeight;
+		emptyGrids();
+		// drawVeryFirstGrid();
+		// resume();
 }
 
-// function changeHeight(argument) {
-// 	//primero pausamos antes de cambiar la dimension del tablero
-// 	if (paused == false) {pause();}
-// 	//luego cambiamos las medidass
-// 	canvasHeight = document.getElementById("height").value*zoom;
-// 	canvasWidth = document.getElementById("height").value*zoom;
-// 	canvas.width = canvasWidth*zoom;
-// 	canvas.height = canvasHeight*zoom;
-// 	// console.log("canvasHeight : " + canvasHeight);	
-// 	// console.log("canvasWidth : " + canvasWidth);
-// 	//volvemos a ponerlo en marcha
-// 	resume();
+function changeWidth(argument) {
+	console.log("argumentNewWidth : " + argument*zoom);
+	
+	canvasWidth = argument * 2;
+	canvas.width = canvasWidth * zoom;
+}
+
+// function changeZoom(argument) {
+// 	zoom = document.getElementById("zoom").value ;
+// 	console.log("zoom : " + zoom);
+// 	// borrarPantalla();//sin borrar grids
+// 	// init();
+// 	document.getElementById("zoom").value = zoom;
+// 	// drawVeryFirstGrid();
 // }
-
-function changeZoom(argument) {
-	zoom = document.getElementById("zoom").value ;
-	console.log("zoom : " + zoom);
-	// borrarPantalla();//sin borrar grids
-	// init();
-	document.getElementById("zoom").value = zoom;
-	// drawVeryFirstGrid();
-}
 
 function eraseBoard(argument) {
 	console.log("eraseBoard");
 	clearTimeout(bucle);
 	emptyGrids();
-	drawVeryFirstGrid();
-	// history.go(0);
-	numGenerations = 0;
+	deleteBoard();
+	// drawVeryFirstGrid();
 	pattern = 0;
 	paused = true;
 	console.log("numGenerations : " + numGenerations);
 	document.title = "Generation: " + numGenerations;
+}
+
+//emptyGrids , despuesde hacerla creo ver q es la misma q initgrids
+function emptyGrids(argument) {
+	for (var i = 0; i < canvasWidth; i++) {
+			grid1[i]= 0;
+			grid2[i] = 0;
+	}
+	// /el punto inicial de la primera fila
+	grid1[parseInt((canvasWidth/2))] = 1;
+	console.log("grid1[parseInt((canvasWidth/2))] : " + grid1[parseInt((canvasWidth/2))]);
+	
+}
+
+function deleteBoard(argument) {
+	for (var i = 1; i < canvasWidth ; i++) {
+		for (var j = 1; j < numGenerations+2; j++) {
+			deleteRect(i,j);
+		}	    
+	};
+	numGenerations = 0;
+	jCoord = 1;
 }

@@ -16,10 +16,4 @@ function drawPattern(pattern) {
   decodeRle(pattern);
  
   drawVeryFirstGrid();
-  // //despues de imprimir la primera gen se empieza el bucle de grid1 grid2
-  // drawPixels1();
-  //drawPixels es las dos de abajo: check y draw
-  // checkRules();
-  // //
-  // drawGrid();
 }

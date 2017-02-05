@@ -5,9 +5,9 @@ function pause(argument) {
 }
 	      
 function resume(argument) {
-	// console.log("resume?");
-  	drawVeryFirstGrid();
-	setTimeout(drawPixels1,interval); //drawPixels=check and draw
+	console.log("resume?");
+  drawVeryFirstGrid();
+	setTimeout(drawPixels1, interval); //drawPixels=check and draw
 	paused = false;
 	console.log("paused : " + paused);
 }
