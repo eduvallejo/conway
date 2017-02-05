@@ -36,6 +36,8 @@ function init(argument) {
 	document.getElementById("height").value = canvasHeight;
 	//poner el intervalo en el input del intervalo
 	document.getElementById("interval").value = interval;
+	//poner la rule en el input rule
+	document.getElementById("rule").value = rule;
 
 	
 

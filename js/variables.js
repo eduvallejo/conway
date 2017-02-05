@@ -11,11 +11,11 @@ var interval = 30;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
 //zoom = zoom
-var zoom = 1;
+var zoom = 10;
 var origenPatternsImportadosX = 1;
 var origenPatternsImportadosY = 1;
 
-var neighboursAlive;
+var neighbours;
 var numGenerations = 0;
 var gridX; var gridY; var message;
 //true o false para escribir o solo mover
@@ -30,9 +30,9 @@ var pattern;
 var paused = true;
 
 var jCoord = 1;
-var numMaxIterations = 8;
+var numMaxIterations = 20;
 var canvasHeight = numMaxIterations;
 var canvasWidth = canvasHeight*2;
 //rules
-var rule = 30;
+var rule = 90;
 var ruleBinary;

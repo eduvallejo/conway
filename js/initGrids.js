@@ -12,6 +12,8 @@ function initGrids(argument) {
 		grid2[i]=0
 	}
 	//el punto inicial de la primera fila
+	// console.log("parseInt((canvasWidth/2)) : " + parseInt((canvasWidth/2)));
+	
 	grid1[parseInt((canvasWidth/2))] = 1;
 }
 

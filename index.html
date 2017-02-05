@@ -33,6 +33,9 @@
 <!--  -->
 <button  onclick='togglePause()'>Run/Pause(p)</button>
 <button  onclick='eraseBoard()'>Erase the board(e)</button>
+<!-- change rule -->
+<input type="text" id="rule" style="width: 50px">
+<button type="submit"  onclick=changeRule()>rule</button>
 <br><br>
 <button id="populateSelect" onclick="populateSelect()">select pattern--></button>
 <select id="mySelect" onchange="drawOption()">

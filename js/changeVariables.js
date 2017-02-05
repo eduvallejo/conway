@@ -1,3 +1,16 @@
+function changeRule(argument) {
+// //solo se aplica para hacer más grande el tablero
+	eraseBoard();
+	var newRule = document.getElementById("rule").value;
+	console.log("newRule : " + newRule);
+
+	if (paused == false) {pause();}
+	
+	// canvasHeight = document.getElementById("rule").value;
+	rule = newRule;
+	// emptyGrids();
+	resume();
+}
 
 function changeInterval(argument) {
 	clearTimeout(bucle);
@@ -24,7 +37,7 @@ function changeHeight(argument) {
 		numMaxIterations = newHeight;
 		emptyGrids();
 		// drawVeryFirstGrid();
-		// resume();
+		resume();
 }
 
 function changeWidth(argument) {
