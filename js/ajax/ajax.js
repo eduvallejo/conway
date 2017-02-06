@@ -12,7 +12,7 @@ function ajax(fileName) {
 	http.onreadystatechange = function() {//Call a function when the state changes.
 	// console.log("url : " + url);
 	    if(http.readyState == 4 && http.status == 200) {
-	        // console.log("http.response: " + http.response);
+	        console.log("http.response: " + http.response);
 	        response = JSON.parse(http.response);
 	        console.log("response[0] : " + response[0]);
 	        console.log("response[1] : " + response[1]);

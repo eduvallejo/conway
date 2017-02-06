@@ -1,4 +1,4 @@
-//decode rle pattern and give values to grid1
+//decode rle pattern and give values to grid1.
 function decodeRle(pattern) {
 	var pointer = 0; 
 	var row = [];
