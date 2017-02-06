@@ -6,6 +6,7 @@ function ajax(fileName) {
 
 	//ajax
 	var http = new XMLHttpRequest();
+  	document.getElementById("loading").innerHTML = '<img src="js/ajax/spinner.gif" />'; // Set here the image before sending request
 	http.open("GET", url, true);
 	http.send();
 
@@ -14,10 +15,8 @@ function ajax(fileName) {
 	    if(http.readyState == 4 && http.status == 200) {
 	        console.log("http.response: " + http.response);
 	        response = JSON.parse(http.response);
-	        // console.log("response[0] : " + response[0]);
-	        // console.log("response[1] : " + response[1]);
-	        // console.log("pattern : " + response[2]);
-	        
+      		document.getElementById("loading").innerHTML = ''; // Hide the image after the response from the server
+
 	        if(paused == false){pause();}
 	        //change board size according to pattern x, y
 	        if (response[0] > 100 || response[1] > 100) {
@@ -39,8 +38,7 @@ function ajax(fileName) {
 	        	drawPattern(response[2]);
 	        	
 	        	}else{
-			        // document.getElementById("height").value = canvasHeight;
-			        // changeHeight();
+			        // zoom = 2;
 			        init();
 			        console.log("pequeño");
 			        drawPattern(response[2]);

@@ -1,6 +1,6 @@
 TODO
 CONWAY branch 
-
+centrar el canvas, sobretodo si el canvas es grande y no cabe en pantalla. comprobar si se hace un resize automatico cuando se le obliga a caber en pantalla
 quitar el foco del select para poder usar los atajos sin q se cargue otra opcion
 
 quitar el blinker2 y el blinkerDebug, no se si estan en el remoto pero si en el localhost
