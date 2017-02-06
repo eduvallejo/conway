@@ -14,9 +14,9 @@ function ajax(fileName) {
 	    if(http.readyState == 4 && http.status == 200) {
 	        // console.log("http.response: " + http.response);
 	        response = JSON.parse(http.response);
-	        console.log("response[0] : " + response[0]);
-	        console.log("response[1] : " + response[1]);
-	        console.log("pattern : " + response[2]);
+	        // console.log("response[0] : " + response[0]);
+	        // console.log("response[1] : " + response[1]);
+	        // console.log("pattern : " + response[2]);
 	        
 	        if(paused == false){pause();}
 	        //change board size according to pattern x, y
@@ -30,21 +30,23 @@ function ajax(fileName) {
 	        	}
 	        	origenPatternsImportadosX =+ 100;
 	        	origenPatternsImportadosY =+ 100;
-	        	// console.log("canvasWidth : " + canvasWidth);
+	        	console.log("canvasWidth : " + canvasWidth);
 	        	zoom = 1;
 	        	// console.log("origenPatternsImportadosX : " + origenPatternsImportadosX);
+	        	console.log("grande");
 	        	init();
-	        	console.log("pattern : " + response[2]);
+	        	// console.log("pattern : " + response[2]);
 	        	drawPattern(response[2]);
 	        	
-	        }
-	        // document.getElementById("height").value = canvasHeight;
-	        // changeHeight();
-
-	        drawPattern(response[2]);
-	       
-	    }else{
-	      console.log("http.readyState: " + http.readyState);
+	        	}else{
+			        // document.getElementById("height").value = canvasHeight;
+			        // changeHeight();
+			        init();
+			        console.log("pequeño");
+			        drawPattern(response[2]);
+		       	}
+	    	}else{
+	      // console.log("http.readyState: " + http.readyState);
 	    }
 	// console.log("ajax: " + fileName);
 	}     
