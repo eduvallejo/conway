@@ -1,3 +1,18 @@
+function changeRuleByReference(argument) {
+// //solo se aplica para hacer más grande el tablero
+	eraseBoard();
+	var newRule = argument;
+	console.log("newRule : " + argument);
+
+	if (paused == false) {pause();}
+	
+	// canvasHeight = document.getElementById("rule").value;
+	rule = newRule;
+	// emptyGrids();
+	resume();
+}
+
+
 function changeRule(argument) {
 // //solo se aplica para hacer más grande el tablero
 	eraseBoard();
@@ -12,14 +27,27 @@ function changeRule(argument) {
 	resume();
 }
 
-function changeInterval(argument) {
-	clearTimeout(bucle);
-   
-	interval = document.getElementById("interval").value;
-	console.log("interval : " + interval);	
+function changeZoom(argument) {
+	eraseBoard();
+	zoom = document.getElementById("zoom").value/zoom;
+	changeHeightReference();
+// //solo se aplica para hacer más grande el tablero
+	// canvasHeight = canvasHeight/zoom;
+	// canvasWidth = canvasWidth/zoom;
+	// zoom = document.getElementById("zoom").value;
+	// canvasHeight = canvasHeight * zoom;
+	// canvasWidth = canvasWidth * zoom;
+	console.log("canvasHeight : " + canvasHeight);
+	console.log("canvasWidth : " + canvasWidth);
+	console.log("zoom : " + zoom);
 	
-	setTimeout(drawPixels1,interval);
-	console.log("paused : " + paused);
+	zoom = newZoom;
+	document.getElementById("zoom").value = zoom;
+	document.getElementById("height").value = canvasHeight;
+	// emptyGrids();
+	emptyGrids();
+	resume();
+	
 }
 
 function changeHeight(argument) {
@@ -45,6 +73,16 @@ function changeWidth(argument) {
 	
 	canvasWidth = argument * 2;
 	canvas.width = canvasWidth * zoom;
+}
+
+function changeInterval(argument) {
+	clearTimeout(bucle);
+   
+	interval = document.getElementById("interval").value;
+	console.log("interval : " + interval);	
+	
+	setTimeout(drawPixels1,interval);
+	console.log("paused : " + paused);
 }
 
 // function changeZoom(argument) {

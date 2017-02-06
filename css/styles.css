@@ -1,5 +1,11 @@
 #myCanvas {
     border: 1px solid #000000;
+    margin: 10px auto;
+    display: block;
+}
+
+#primeraLinea, #segundaLinea, #terceraLinea {
     margin: 0 auto;
     display: block;
+    text-align: center;
 }

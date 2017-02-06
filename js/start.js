@@ -11,7 +11,7 @@ function init(argument) {
 
 	//debugging file uopload.
 	// document.getElementById("fileId").click();
-	// document.getElementById("populateSelect").click();
+	document.getElementById("populateSelect").click();
 
 	//para cuando se abra nuevo archivo 
 	// document.getElementById('fileId').onchange = function () {
@@ -38,6 +38,8 @@ function init(argument) {
 	document.getElementById("interval").value = interval;
 	//poner la rule en el input rule
 	document.getElementById("rule").value = rule;
+	//poner la zoom en el input zoom
+	document.getElementById("zoom").value = zoom;
 
 	
 

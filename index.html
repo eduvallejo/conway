@@ -8,14 +8,14 @@
     <script src="js/init.js"></script>
     <script src="js/drawgrid.js"></script>
     <script src="js/fillrect.js"></script>
-    <script src="js/getposition.js"></script>
+    <!-- <script src="js/getposition.js"></script> -->
     <script src="js/patterns.js"></script>
     <script src="js/initGrids.js"></script>
     <script src="js/checkRules.js"></script>
-    <script src="js/decodeRle.js"></script>
-    <script src="js/coloringBeginAndReticula.js"></script>
-    <script src="js/ajax/ajax.js"></script>
-    <script src="js/openfile.js"></script>
+    <!-- <script src="js/decodeRle.js"></script> -->
+    <!-- <script src="js/coloringBeginAndReticula.js"></script> -->
+    <!-- <script src="js/ajax/ajax.js"></script> -->
+    <!-- <script src="js/openfile.js"></script> -->
     <script src="js/changeVariables.js"></script>
     <script src="js/pause-resume.js"></script>
     <script src="js/select/populateSelect.js"></script>
@@ -28,31 +28,32 @@
 <!--<body onload="ajax('blinker')"> -->
   <!-- <body onload="populateAjax();init();">  --> <!-- conway -->
   <body onload="init();"> 
-<!-- <body> -->
-<!-- <input type='file' id="fileId"> -->
-<!--  -->
-<button  onclick='togglePause()'>Run/Pause(p)</button>
-<button  onclick='eraseBoard()'>Erase the board(e)</button>
-<!-- change rule -->
-<input type="text" id="rule" style="width: 50px">
-<button type="submit"  onclick=changeRule()>rule</button>
-<br><br>
-<button id="populateSelect" onclick="populateSelect()">select pattern--></button>
-<select id="mySelect" onchange="drawOption()">
-    <option value="" ></option>
-    <!-- <option value="barbershop">barbershop</option> -->
-</select>
+<h3 style="text-align: center;margin:0;">Wolfram's one dimension automaton</h3>
+<a href="../index.html" style="position:fixed; right: 0; top:0">Conway´s Game of Life</a>
+<div id="primeraLinea">
+    <button  onclick='togglePause()'>Run/Pause(p)</button>
+    <button  onclick='eraseBoard()'>Erase the board(e)</button>
+</div>
 
-<!-- //changeInterval -->
-<input type="text" name="interval" id="interval" style="width: 50px">
-<button type="submit" value="interval" onclick=changeInterval()>interval</button>
-<!-- change height -->
-<input type="text" id="height" style="width: 50px">
-<button type="submit"  onclick=changeHeight()>height</button>
+<!-- <br><br> -->
+<div id="segundaLinea">
+    <button id="populateSelect" onclick="populateAjax()">select rule--></button>
+    <select id="mySelect" onchange="drawOption()">
+        <option value="" >90</option>
+        <!-- <option value="barbershop">barbershop</option> -->
+    </select>
+</div>
 
-<br>
+<div id="terceraLinea">
+    <!-- //changeInterval -->
+<!--     <input type="text" name="interval" id="interval" style="width: 50px">
+    <button type="submit" value="interval" onclick=changeInterval()><-interval</button>
+ -->    <!-- change height -->
+    <input type="text" id="height" style="width: 50px">
+    <button type="submit"  onclick=changeHeight()><--generations</button>
+</div>
 
-
+<!-- <br> -->
 <canvas id="myCanvas"  style="border:1px solid #000000;">
 </canvas> 
 

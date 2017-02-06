@@ -1,7 +1,7 @@
 
 function populateAjax(fileName) {
 	// var url = "js/ajax/echo.php?name=" + fileName;
-	// 
+	console.log("populateAjax");
 	var url = "js/select/getNamesPatterns.php"; 
 	// var url = "../select/getNamesPatterns.php?name=" + fileName; 
 
@@ -32,9 +32,9 @@ function populateAjax(fileName) {
 	    
 	       
 	    }else{
-	      // console.log("http.readyState: " + http.readyState);
-	      // console.log("http.status: " + http.status);
-	      // console.log("http : " + http);
+	      console.log("http.readyState: " + http.readyState);
+	      console.log("http.status: " + http.status);
+	      console.log("http : " + http);
 	      
 	    }
 	}    
@@ -44,7 +44,7 @@ function populateAjax(fileName) {
 function drawOption(argument) {
 	var value = document.getElementById("mySelect").value;
 	console.log("value : " + value);
-	ajax(value);
+	changeRuleByReference(value);
 			
 }
 

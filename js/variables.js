@@ -11,7 +11,7 @@ var interval = 30;
 // console.log("grid1 : [" + i + "][" + j + "]= "+ grid1[i][j] + ", grid2 : [" + i + "][" + j + "]= " + grid2[i][j]);				
 
 //zoom = zoom
-var zoom = 10;
+var zoom = 1;
 var origenPatternsImportadosX = 1;
 var origenPatternsImportadosY = 1;
 
@@ -30,7 +30,7 @@ var pattern;
 var paused = true;
 
 var jCoord = 1;
-var numMaxIterations = 20;
+var numMaxIterations = 500;
 var canvasHeight = numMaxIterations;
 var canvasWidth = canvasHeight*2;
 //rules
