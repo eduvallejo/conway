@@ -27,6 +27,8 @@ while(!feof($file)){
 	$linea =(fgets($file));
 	if ($linea[0] != "#" && $linea[0] != "x" && $linea[0] != "y") {
 			# code...
+		$linea = str_replace("\r", "", $linea);
+		$linea = $linea . "\n";//para evitar el bug de cuando los rle no llevan un salto de linea
 		$pos = strpos($linea, "\n");
 		if ($pos !== false) {
 		

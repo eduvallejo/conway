@@ -42,7 +42,9 @@ function decodeRle(pattern) {
 	  run_count = "" + run_count + pattern[pointer];
 	  
 	}
+	
 	pointer++;
 	}//end While
+	console.log("pattern[" + pointer + "] : " + pattern[pointer]);
 	  // consoleGrid();
 }

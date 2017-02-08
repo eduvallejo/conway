@@ -13,7 +13,7 @@ function ajax(fileName) {
 	http.onreadystatechange = function() {//Call a function when the state changes.
 	// console.log("url : " + url);
 	    if(http.readyState == 4 && http.status == 200) {
-	        console.log("http.response: " + http.response);
+	        console.log("numero de patrones: " + http.response.length);
 	        response = JSON.parse(http.response);
       		document.getElementById("loading").innerHTML = ''; // Hide the image after the response from the server
 

@@ -1,5 +1,10 @@
 TODO
 CONWAY branch 
+
+mirar porque la width se queda en "519" clavada y no cambia aunq se cargue un pattern pequeño
+
+no se vcargan los nuevos all patterns, parece ser un problema de q no hay un salto de linea \n al final del pattern y no se llega a mandar el pattern del echo al ajax
+SOLUCIONADO con un $linea = linea . "\n" en el echo.php
 centrar el canvas, sobretodo si el canvas es grande y no cabe en pantalla. comprobar si se hace un resize automatico cuando se le obliga a caber en pantalla
 quitar el foco del select para poder usar los atajos sin q se cargue otra opcion
 

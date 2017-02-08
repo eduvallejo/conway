@@ -23,10 +23,10 @@ function populateAjax(fileName) {
 	http.onreadystatechange = function() {//Call a function when the state changes.
 	// console.log("url : " + url);
 	    if(http.readyState == 4 && http.status == 200) {
-	        console.log("http.response: " + http.response);
+	        // console.log("http.response: " + http.response);
 			response = JSON.parse(http.response);
 			// console.log("response : " + response);
-			console.log("response.length : " + response.length);
+			console.log("numero de patterns disponibles : " + response.length);
 
 			for (var i = 0; i < response.length; i++) {
 				var option = document.createElement("option");
